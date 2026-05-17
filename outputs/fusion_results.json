@@ -1,0 +1,6 @@
+{
+  "fusion_f1_macro": 0.7948,
+  "bert_f1_macro": 0.7782,
+  "gain": 0.0166,
+  "target_reached": false
+}

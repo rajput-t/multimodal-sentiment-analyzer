@@ -5,3 +5,6 @@ __pycache__/
 *.pyc
 .env
 config.json
+
+eda_output.png
+debug_labels.py

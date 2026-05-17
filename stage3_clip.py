@@ -37,7 +37,7 @@ raw = load_dataset("mteb/tweet_sentiment_extraction")
 # ── 2. Load CLIP ──────────────────────────────────────────────────────────────
 print("Loading CLIP...")
 processor = CLIPProcessor.from_pretrained(MODEL_NAME)
-model     = CLIPModel.from_pretrained(MODEL_NAME).to(DEVICE)
+model = CLIPModel.from_pretrained(MODEL_NAME, use_safetensors=True).to(DEVICE)
 model.eval()
 
 # ── 3. Extract CLIP text embeddings ──────────────────────────────────────────
@@ -57,11 +57,15 @@ def get_clip_text_embeddings(texts, batch_size=64):
             return_tensors="pt",
             padding=True,
             truncation=True,
-            max_length=77,      # CLIP's token limit
+            max_length=77,
         ).to(DEVICE)
         with torch.no_grad():
-            embeddings = model.get_text_features(**inputs)
-            embeddings = embeddings / embeddings.norm(dim=-1, keepdim=True)  # L2 normalise
+            outputs = model.get_text_features(**inputs)
+            if hasattr(outputs, "pooler_output"):
+                embeddings = outputs.pooler_output
+            else:
+                embeddings = outputs
+            embeddings = torch.nn.functional.normalize(embeddings, p=2, dim=-1)
         all_embeddings.append(embeddings.cpu().numpy())
         if i % 1000 == 0:
             print(f"  {i}/{len(texts)}")
