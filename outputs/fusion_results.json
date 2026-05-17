@@ -1,6 +1,8 @@
 {
-  "fusion_f1_macro": 0.7948,
-  "bert_f1_macro": 0.7782,
-  "gain": 0.0166,
-  "target_reached": false
+  "fusion_f1_macro": 0.7084,
+  "bert_f1_macro": 0.7079,
+  "gain": 0.0005,
+  "target_reached": false,
+  "dataset": "MVSA-Single",
+  "num_samples": 4869
 }
