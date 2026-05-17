@@ -1,0 +1,7 @@
+data/raw/
+data/processed/
+outputs/checkpoints/
+__pycache__/
+*.pyc
+.env
+config.json
