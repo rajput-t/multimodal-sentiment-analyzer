@@ -16,6 +16,19 @@ A multimodal sentiment analysis pipeline combining **BERT** (text) and **CLIP** 
 The fusion model matches but does not significantly outperform the text-only baseline. This is a documented finding, not an oversight — see [Why the image branch contributes little](#why-the-image-branch-contributes-little).
 
 ---
+## Screenshots
+
+### Gradio demo
+![Gradio demo](screenshots/demo.png)
+
+### MVSA-Single EDA
+![MVSA EDA](outputs/plots/mvsa_eda/mvsa_eda.png)
+
+### Model comparison
+![Model comparison](outputs/plots/model_comparison.png)
+
+### Per-class F1 — BERT vs CLIP
+![BERT vs CLIP](outputs/plots/clip_image_vs_bert.png)
 
 ## Architecture
 
