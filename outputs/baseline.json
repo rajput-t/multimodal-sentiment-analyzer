@@ -1,0 +1,5 @@
+{
+  "text_only_f1_macro": 0.7079,
+  "dataset": "MVSA-Single",
+  "model": "bert-base-uncased"
+}
