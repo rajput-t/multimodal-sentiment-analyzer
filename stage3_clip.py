@@ -183,7 +183,7 @@ w = 0.35
 fig, ax = plt.subplots(figsize=(9, 5))
 ax.bar(x - w/2, bert_per_class, w, label="BERT text-only", color="#3B8BD4")
 ax.bar(x + w/2, clip_per_class, w, label="CLIP image-only", color="#1D9E75")
-ax.axhline(0.8482, color="#E24B4A", linestyle="--", linewidth=1, label="Fusion target")
+#ax.axhline(0.8482, color="#E24B4A", linestyle="--", linewidth=1, label="Fusion target")
 ax.set_xticks(x)
 ax.set_xticklabels(LABEL_NAMES)
 ax.set_ylabel("F1 score")

@@ -1,0 +1,9 @@
+{
+  "clip_image_only_f1_macro": 0.501,
+  "num_samples": 4869,
+  "splits": {
+    "train": 3724,
+    "val": 414,
+    "test": 731
+  }
+}
